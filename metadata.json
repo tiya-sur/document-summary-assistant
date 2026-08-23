@@ -1,0 +1,6 @@
+{
+  "name": "Document Summary Assistant",
+  "description": "AI-powered document and image summarizer with accessible high-contrast light UI, OCR extraction, and multi-length summaries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
