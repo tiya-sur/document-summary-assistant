@@ -8,11 +8,11 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// Initialize Multer for in-memory file handling (limit 25MB)
+
 const storage = multer.memoryStorage();
 const upload = multer({
   storage,
-  limits: { fileSize: 25 * 1024 * 1024 }, // 25MB max
+  limits: { fileSize: 25 * 1024 * 1024 }, 
 });
 
 function getGeminiClient(): GoogleGenAI {
@@ -38,7 +38,7 @@ async function startServer() {
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
-  // Health check endpoint
+  
   app.get("/api/health", (_req, res) => {
     res.json({
       status: "ok",
@@ -47,10 +47,10 @@ async function startServer() {
     });
   });
 
-  // Main Summarize Endpoint
+  
   app.post("/api/summarize", upload.single("file"), async (req, res) => {
     try {
-      const lengthOption = (req.body.length || "medium").toLowerCase(); // short | medium | long
+      const lengthOption = (req.body.length || "medium").toLowerCase(); 
       const customFocus = req.body.focus || "";
       const rawText = req.body.text || "";
       const file = req.file;
@@ -103,7 +103,7 @@ async function startServer() {
         extractedText = rawText.trim();
       }
 
-      // Step 1: Prompt structure based on length
+     
       let lengthInstruction = "";
       if (lengthOption === "short") {
         lengthInstruction =
@@ -112,7 +112,7 @@ async function startServer() {
         lengthInstruction =
           "Provide an in-depth, thorough, and comprehensive summary (4 to 6 detailed paragraphs) covering all major topics, nuances, background, conclusions, and evidence, followed by 7-10 detailed key points and key takeaway themes.";
       } else {
-        // Medium default
+       
         lengthInstruction =
           "Provide a balanced and structured overview summary (2 to 3 paragraphs) covering all key sections and outcomes, followed by 5-7 clear key points.";
       }
@@ -149,7 +149,7 @@ Please return a structured JSON response matching the requested schema.`;
           ],
         };
       } else {
-        // Plain text
+       
         contents = {
           parts: [
             {
@@ -159,7 +159,7 @@ Please return a structured JSON response matching the requested schema.`;
         };
       }
 
-      // Candidate models in order of priority
+ 
       const candidateModels = [
         "gemini-3.6-flash",
         "gemini-flash-latest",
@@ -259,7 +259,7 @@ Please return a structured JSON response matching the requested schema.`;
         parsedData = JSON.parse(cleanJson);
       } catch (parseErr) {
         console.error("JSON parse error, attempting regex recovery:", parseErr);
-        // Resilient fallback regex parser
+     
         const extractField = (key: string) => {
           const match = cleanJson.match(new RegExp(`"${key}"\\s*:\\s*"([^"]+)"`));
           return match ? match[1] : "";
@@ -285,7 +285,7 @@ Please return a structured JSON response matching the requested schema.`;
         };
       }
 
-      // Calculate statistics
+   
       const finalExtracted = parsedData.extractedText || extractedText || "";
       const wordCount = finalExtracted.split(/\s+/).filter(Boolean).length;
       const characterCount = finalExtracted.length;
@@ -321,7 +321,7 @@ Please return a structured JSON response matching the requested schema.`;
     }
   });
 
-  // Vite integration: development middleware vs static production files
+ 
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
