@@ -4,7 +4,7 @@ An AI-powered web application that processes PDF documents and scanned images to
 
 ---
 
-## 🎯 Deliverable: Brief Write-up of Approach (<200 words)
+##  Deliverable: Brief Write-up of Approach 
 
 > **Approach Write-up:**
 > To build the Document Summary Assistant, we implemented a full-stack architecture pairing a modern React + TypeScript frontend with an Express backend powered by Gemini 2.5 Flash for multimodal parsing and NLP extraction.
@@ -16,36 +16,35 @@ An AI-powered web application that processes PDF documents and scanned images to
 
 ---
 
-## 🚀 Features Checklist (against Assessment Spec)
-
+##  Features Checklist 
 1. **Document Upload**:
-   - ✅ PDF and Image uploads (PNG, JPG, JPEG, TXT)
-   - ✅ Drag-and-drop & native file picker interface
-   - ✅ Direct raw text paste mode & 3 pre-loaded test samples
+   -  PDF and Image uploads (PNG, JPG, JPEG, TXT)
+   -  Drag-and-drop & native file picker interface
+   -  Direct raw text paste mode & 3 pre-loaded test samples
 2. **Text Extraction & OCR**:
-   - ✅ High-accuracy PDF text stream parsing
-   - ✅ Optical Character Recognition (OCR) for scanned images and photos
-   - ✅ Collapsible Raw OCR / Extracted Text inspector with in-text search & copy
+   -  High-accuracy PDF text stream parsing
+   -  Optical Character Recognition (OCR) for scanned images and photos
+   -  Collapsible Raw OCR / Extracted Text inspector with in-text search & copy
 3. **Summary Generation**:
-   - ✅ Automated smart summaries
-   - ✅ Multi-level length selector: **Short** (~30s read), **Medium** (~1-2m read), **Long** (~3-5m read)
-   - ✅ Key points & main ideas extraction with numbered visual badges
-   - ✅ Topic tagging and reading metrics (word count, reading time, document tone)
+   -  Automated smart summaries
+   -  Multi-level length selector: **Short** (~30s read), **Medium** (~1-2m read), **Long** (~3-5m read)
+   -  Key points & main ideas extraction with numbered visual badges
+   -  Topic tagging and reading metrics (word count, reading time, document tone)
 4. **Improvement Suggestions**:
-   - ✅ Actionable recommendations and next steps extracted from the document content
+   -  Actionable recommendations and next steps extracted from the document content
 5. **UI / UX**:
-   - ✅ Clean modern blue aesthetic, fully responsive across mobile, tablet, and desktop
-   - ✅ Accessibility suite: Font scaling, high-contrast theme, dyslexia-friendly spacing
-   - ✅ Text-to-Speech (TTS) voice readout
-   - ✅ Multi-format export: .TXT, .Markdown, .JSON, and Print
+   -  Clean modern blue aesthetic, fully responsive across mobile, tablet, and desktop
+   -  Accessibility suite: Font scaling, high-contrast theme, dyslexia-friendly spacing
+   -  Text-to-Speech (TTS) voice readout
+   -  Multi-format export: .TXT, .Markdown, .JSON, and Print
 6. **Technical & Production Quality**:
-   - ✅ Multi-stage progress indicators during processing
-   - ✅ User-friendly error alert with retry triggers
-   - ✅ Strict TypeScript type safety throughout client and server
+   -  Multi-stage progress indicators during processing
+   -  User-friendly error alert with retry triggers
+   -  Strict TypeScript type safety throughout client and server
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend**: React 18, TypeScript, Tailwind CSS, Lucide Icons, Web Speech API
 - **Backend**: Node.js, Express, Multer
@@ -54,7 +53,7 @@ An AI-powered web application that processes PDF documents and scanned images to
 
 ---
 
-## 💻 Running Locally
+##  Running Locally
 
 1. **Install dependencies**:
    ```bash
