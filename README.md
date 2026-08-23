@@ -4,6 +4,9 @@ An AI-powered web application that processes PDF documents and scanned images to
 
 ---
 
+**Render Deployment**
+https://document-summary-assistant-ucas.onrender.com
+
 ##  Deliverable: Brief Write-up of Approach 
 
 > **Approach Write-up:**
